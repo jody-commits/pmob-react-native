@@ -1,9 +1,9 @@
 import { Button as ExpoButton, Text as ExpoText, Host as ExpoHost } from "@expo/ui";
-import { ButtonProps as ExpoButtonProps, TextProps as ExpoTextProps } from "@expo/ui";
+import { ButtonProps as ExpoButtonProps, TextProps as ExpoTextProps, UniversalHostProps } from "@expo/ui";
 
-export function Button({ ...props }: ExpoButtonProps) {
+export function Button({ hostProps, ...props }: ExpoButtonProps & { hostProps?: UniversalHostProps }) {
   return (
-    <ExpoHost matchContents>
+    <ExpoHost matchContents {...hostProps}>
       <ExpoButton {...props} />
     </ExpoHost>
   );

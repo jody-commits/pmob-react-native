@@ -12,7 +12,16 @@ export default function App() {
         <ButtonText>Hello</ButtonText>
       </Button>
 
-      <Input defaultValue={"Hello"} placeholder="Type here" />
+      <Input
+        defaultValue="Hello"
+        placeholder="Type here"
+        hostProps={{
+          style: {
+            width: "100%",
+          },
+        }}
+      />
+
       <StatusBar style="inverted" />
     </View>
   );
@@ -21,6 +30,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: "100%",
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
