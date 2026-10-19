@@ -1,8 +1,12 @@
-import { TextInput as ExpoTextInput } from "@expo/ui";
+import { TextInput as ExpoTextInput, Host as ExpoHost } from "@expo/ui";
 import { TextInputProps as ExpoTextInputProps } from "@expo/ui";
 
 export function Input({ ...props }: ExpoTextInputProps) {
-  return <ExpoTextInput {...props} />;
+  return (
+    <ExpoHost matchContents>
+      <ExpoTextInput {...props} />
+    </ExpoHost>
+  );
 }
 
 export type InputProps = ExpoTextInputProps;
